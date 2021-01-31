@@ -3,7 +3,7 @@ import setuptools
 
 setup(
     name="nlpt",
-    version="0.0.2",
+    version="0.0.3",
     packages=['nlpt'],
     description="Natural language processing tool for Turkish",
     long_description=open('README.md', encoding="utf8").read(),
