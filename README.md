@@ -20,15 +20,21 @@ pip install .
 
 ## word-embeddings
 
-`train.py` reads one sentence per line from `sentences.txt` and writes a Word2Vec file. `predict.py` loads that file and prints nearest-word examples. Both scripts use the Gensim 3 argument `size` (Gensim 4 renamed it to `vector_size`).
+`train.py` reads one sentence per line from `sentences.txt` and writes a Word2Vec file. `predict.py` loads that file and prints nearest-word examples. Training uses the Gensim 3 argument `size` (Gensim 4 renamed it to `vector_size`).
 
 ```bash
 cd word-embeddings
+pip install 'gensim>=3.8,<4'
+```
+
+Put the corpus in `sentences.txt` in this directory before training: one sentence per line, words separated by spaces. `predict.py` looks up `aselsan`, `silah`, `uçak`, `araba`, `iha`, `roket`, `motor`, and `füze`, so those words have to appear in the corpus.
+
+```bash
 python train.py
 python predict.py
 ```
 
-`train.py` writes `wordEmbeddings.txt` in the same directory. `predict.py` expects that file to already be there.
+`train.py` writes `wordEmbeddings.txt` in the same directory. Run it before `predict.py`.
 
 ## document-similarity
 
